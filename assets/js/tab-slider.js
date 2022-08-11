@@ -10,3 +10,12 @@ function myFunction(imgs) {
     // Show the container element (hidden with CSS)
     expandImg.parentElement.style.display = "block";
 }
+
+var inputSize =  document.querySelector('input[name="size"]');
+for (var i = 0; i < inputSize.length; i++){
+    if (checkbox[i].checked === true){
+        result += ' [' + checkbox[i].value + ']';
+    }
+}
+
+console.log(result);

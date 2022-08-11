@@ -12,13 +12,17 @@ body {
 
 }
 
+a{
+    text-decoration: none;
+}
+
 :root {
     --color-primary: #0975f5;
     --color-sub: #1fb5d4;
     --color-black: #000;
     --color-white: #ffff;
     --color-container: #F8F8F8;
-    --color-text: rgb(119, 114, 114);
+    --color-text: rgb(85, 83, 83);
 }
 
 .header-cart {
@@ -120,7 +124,7 @@ body {
     height: 320px;
     overflow-y: auto;
     z-index: 1;
-    display: none;
+    /* display: none; */
 }
 
 .product-result-search::-webkit-scrollbar {

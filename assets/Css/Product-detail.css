@@ -134,13 +134,32 @@
   margin-left: 30px;
 }
 
-.product-atribute_list-color li {
+.product-atribute_list-color label {
   width: 30px;
   height: 30px;
-  background-color: var(--color-primary);
   margin-right: 20px;
   border-radius: 50px;
   cursor: pointer;
+}
+
+.product-atribute_list-size label{
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bg-black{
+  background-color: #000;
+}
+
+.bg-orange{
+  background-color: orange;
+}
+
+.bg-red{
+  background-color: red;
 }
 
 /*  */

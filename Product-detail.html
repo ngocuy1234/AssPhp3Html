@@ -171,37 +171,54 @@
                     </div>
                 </div>
                 <div class="content-product-info_right">
-                    <div class="header-product-info_right">
-                        <h3 class="product-name">Ghế sofa giường kéo Roots</h3>
-                        <div class="product-sale">25%</div>
-                    </div>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
+                    <form action="">
+                        <div class="header-product-info_right">
+                            <h3 class="product-name">Ghế sofa giường kéo Roots</h3>
+                            <div class="product-sale">25%</div>
                         </div>
-                        <div class="product-price_sale color-text">
-                            1,250,000₫
+                        <div class="product-item_price-wraper">
+                            <div class="product-price-main">
+                                890,000₫
+                            </div>
+                            <div class="product-price_sale color-text">
+                                1,250,000₫
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-atribute_box">
-                        <p>Màu sắc : </p>
-                        <ul class="product-atribute_list-color">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <p class="alert-product-number">Còn 10 sản phẩm</p>
-                    <div class="">
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                class="minus"><i class="fa-solid fa-minus"></i></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                class="plus"><i class="fa-solid fa-plus"></i></button>
+                        <div class="product-atribute_box">
+                            <p>Kích cỡ : </p>
+                            <ul class="product-atribute_list-size">
+                                <label for="size">To</label>
+                                <input id="size" value="R" hidden name="To" type="radio">
+                                <label for="size2">Nhỏ</label>
+                                <input id="size2" value="2" hidden name="Nhỏ" type="radio">
+                            </ul>
                         </div>
-                        <button class="btn-add-to-cart">Thêm giỏ hàng</button>
-                    </div>
+                        <div class="product-atribute_box">
+                            <p>Màu sắc : </p>
+                            <ul class="product-atribute_list-color">
+                                <label for="color" class="bg-black" ></label>
+                                <input id="color" hidden name="color" type="radio">
+                                <label for="color1" class="bg-orange"></label>
+                                <input id="color1" hidden name="color" type="radio">
+                                <label for="color2" class="bg-red"></label>
+                                <input id="color2" hidden name="color" type="radio">
+                            </ul>
+                        </div>
+                        <div class="product-atribute">
+                          
+                        </div>
+                        <p class="alert-product-number">Còn 10 sản phẩm</p>
+                        <div class="">
+                            <div class="number-input">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                    class="minus"><i class="fa-solid fa-minus"></i></button>
+                                <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                    class="plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                            <button class="btn-add-to-cart">Thêm giỏ hàng</button>
+                        </div>
+                    </form>
                     <div class="tabs1">
                         <div class="tab-item active tablinks" id="defaultOpen" onclick="openCity(event, 'London')">Mô tả
                         </div>

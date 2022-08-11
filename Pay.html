@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/Css/base.css">
-    <link rel="stylesheet" href="./assets/Css/contact.css">
+    <link rel="stylesheet" href="./assets/Css/cart.css">
+    <link rel="stylesheet" href="./assets/Css/Pay.css">
+    <link rel="stylesheet" href="./assets/Css/dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0"
         nonce="vWDw95v7"></script>
+
 </head>
 
 <body>
@@ -34,56 +37,6 @@
                 <form action="" class="header-search_form-box">
                     <input class="header-search_form-input" type="text" placeholder="Tìm kiếm sản phẩm">
                     <button class="header-search_btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <div class="product-result-search">
-                        <div class="product-search-item">
-                            <img  class="product-search-item-img w-100" src="https://product.hstatic.net/1000409762/product/sp1-1_8b56d5f805744ca98b24545ae72d3cb4_master.jpg" alt="">
-                            <div class="product-search-item-name">
-                                Ghế phòng khách Arctander
-                            </div>
-                            <h4 class="product-search-item-price">799,000₫
-                            </h4>
-                        </div>
-                        <div class="product-search-item">
-                            <img  class="product-search-item-img w-100" src="https://product.hstatic.net/1000409762/product/sp1-1_8b56d5f805744ca98b24545ae72d3cb4_master.jpg" alt="">
-                            <div class="product-search-item-name">
-                                Ghế phòng khách Arctander
-                            </div>
-                            <h4 class="product-search-item-price">799,000₫
-                            </h4>
-                        </div>
-                        <div class="product-search-item">
-                            <img  class="product-search-item-img w-100" src="https://product.hstatic.net/1000409762/product/sp1-1_8b56d5f805744ca98b24545ae72d3cb4_master.jpg" alt="">
-                            <div class="product-search-item-name">
-                                Ghế phòng khách Arctander
-                            </div>
-                            <h4 class="product-search-item-price">799,000₫
-                            </h4>
-                        </div>
-                        <div class="product-search-item">
-                            <img  class="product-search-item-img w-100" src="https://product.hstatic.net/1000409762/product/sp1-1_8b56d5f805744ca98b24545ae72d3cb4_master.jpg" alt="">
-                            <div class="product-search-item-name">
-                                Ghế phòng khách Arctander
-                            </div>
-                            <h4 class="product-search-item-price">799,000₫
-                            </h4>
-                        </div>
-                        <div class="product-search-item">
-                            <img  class="product-search-item-img w-100" src="https://product.hstatic.net/1000409762/product/sp1-1_8b56d5f805744ca98b24545ae72d3cb4_master.jpg" alt="">
-                            <div class="product-search-item-name">
-                                Ghế phòng khách Arctander
-                            </div>
-                            <h4 class="product-search-item-price">799,000₫
-                            </h4>
-                        </div>
-                        <div class="product-search-item">
-                            <img  class="product-search-item-img w-100" src="https://product.hstatic.net/1000409762/product/sp1-1_8b56d5f805744ca98b24545ae72d3cb4_master.jpg" alt="">
-                            <div class="product-search-item-name">
-                                Ghế phòng khách Arctander
-                            </div>
-                            <h4 class="product-search-item-price">799,000₫
-                            </h4>
-                        </div>
-                    </div>
                 </form>
                 <div class="header-phone header-main_sub">
                     <p><i class="fa-solid icon fa-square-phone"></i></p>
@@ -94,16 +47,23 @@
                         </p>
                     </div>
                 </div>
-                <div class="header-login  header-main_sub">
-                    <p><i class="fa-solid icon fa-user"></i></p>
-                    <div class="">
-                        <span>Đăng nhập/Đăng ký</span>
-                        <br>
-                        <p>Tài khoản của tôi <i class="fa-solid fa-caret-down"></i>
-                        </p>
+                <div class="header-login   dropdown">
+                    <div onclick="dropdown()" class="header-main_sub dropbtn">
+                        <img class="header-info-user-img"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYmkp9a2rrD1Sskb9HLt5mDaTt4QaIs8CcBg&usqp=CAU"
+                            alt="">
+                        <div class="header-info-user-name" style="margin-left: 15px;">
+                            <p>Nguyen Ngoc Uy</p>
+                        </div>
+                    </div>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Thông tin</a>
+                        <a href="#">Hoá đơn</a>
+                        <a href="#">Đăng xuất</a>
                     </div>
                 </div>
-                <div class="header-cart header-main_sub">
+
+                <div onclick="openNav()" class="header-cart header-main_sub">
                     <div class="header-icon-cart">
                         <p><i class="fa-solid icon fa-cart-shopping"></i></p>
                         <span>0</span>
@@ -111,6 +71,53 @@
                     <div class="">
                         <p>Giỏ hàng
                         </p>
+                    </div>
+                </div>
+                <div id="mySidenav" class="sidenav cart-list-info">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="" style="padding: 0px 20px ;border-top:1px solid #ccc;">
+                        <h4 style="margin-top: 10px;">Tổng số : 10</h4>
+                        <div class="cart-list-item">
+                            <img class="cart-list-item-img "
+                                src="https://product.hstatic.net/1000409762/product/sp11-2_d58d2329380c41f1885a093a5cf2f27c_large.jpg"
+                                alt="">
+                            <div class="">
+                                <p class="cart-list-item-name">Ghế sofa giường kéo Roots</p>
+                                <p class="cart-list-item-price">890,000₫ <span>(4)</span></p>
+                            </div>
+                            <a href="" class="btn-cart-delete"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                        <div class="cart-list-item">
+                            <img class="cart-list-item-img "
+                                src="https://product.hstatic.net/1000409762/product/sp11-2_d58d2329380c41f1885a093a5cf2f27c_large.jpg"
+                                alt="">
+                            <div class="">
+                                <p class="cart-list-item-name">Ghế sofa giường kéo Roots</p>
+                                <p class="cart-list-item-price">890,000₫ <span>(4)</span></p>
+                            </div>
+                            <a href="" class="btn-cart-delete"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                        <div class="cart-list-item">
+                            <img class="cart-list-item-img "
+                                src="https://product.hstatic.net/1000409762/product/sp11-2_d58d2329380c41f1885a093a5cf2f27c_large.jpg"
+                                alt="">
+                            <div class="">
+                                <p class="cart-list-item-name">Ghế sofa giường kéo Roots</p>
+                                <p class="cart-list-item-price">890,000₫ <span>(4)</span></p>
+                            </div>
+                            <a href="" class="btn-cart-delete"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                        <div class="cart-list-item">
+                            <img class="cart-list-item-img "
+                                src="https://product.hstatic.net/1000409762/product/sp11-2_d58d2329380c41f1885a093a5cf2f27c_large.jpg"
+                                alt="">
+                            <div class="">
+                                <p class="cart-list-item-name">Ghế sofa giường kéo Roots</p>
+                                <p class="cart-list-item-price">890,000₫ <span>(4)</span></p>
+                            </div>
+                            <a href="" class="btn-cart-delete"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                        <button class="cart-list-view">Xem giỏ hàng </button>
                     </div>
                 </div>
             </div>
@@ -126,28 +133,42 @@
                 </ul>
             </div>
         </header>
-        <div class="content padding-container">
-            <div class="content_map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51974.65430294727!2d105.7366667103181!3d20.60011025942087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313433272518ce69%3A0x801ec3badbb117f5!2zSMawxqFuZyBTxqFuLCBN4bu5IMSQ4bupYywgSGFub2ksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1658632803627!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="content_form">
-                <h3 class="content_form-title">Liên hệ</h3>
-                <span class="color-text">Địa chỉ chúng tôi</span>
-                <p class="content_form-address">Tầng 4, tòa nhà Flemington, số 182, đường Lê Đại Hành, phường 15, quận 11, Tp. Hồ Chí Minh.</p>
-                <span class="color-text">Email chúng tôi</span>
-                <p class="content_form-address">hi@haravan.com</p>
-                <span class="color-text">Điện thoại</span>
-                <p class="content_form-address">1900.636.099</p>
-                <span class="color-text">Thời gian làm việc</span>
-                <p class="content_form-address">Thứ 2 đến Thứ 6 từ 8h đến 18h; Thứ 7 và Chủ nhật từ 8h00 đến 17h00</p>
-                <h3 class="content_form-title">Gửi thắc mắc cho chúng tôi</h3>
-                <form action="form-contact">
-                  
-                </form>
-            </div>
-           
+
+        <div class="content padding-container text-center">
+            <h3 class="title-page-name commom-title text-center">Thanh toán</h3>
+            <p class="text-center color-text"> Giỏ hàng của bạn , hãy chọn những thứ mình muốn </p>
+            <form class="cart-box">
+                <div class="">
+                    <h4 class="title-form">Điền thông tin của bạn</h4>
+                    <input type="text" class="input-contact" placeholder="Tên của bạn ">
+                    <input type="text" class="input-contact" placeholder="Email của bạn">
+                    <div class="form-grid-input">
+                        <input type="text" class="input-contact" placeholder="Địa chỉ của bạn ">
+                        <input type="text" class="input-contact" placeholder="Số điện thoại của bạn">
+                    </div>
+                    <textarea class="input-contact-textarea" placeholder="Nội dung" name=""></textarea>
+                </div>
+                <div class="total-money">
+                    <div class="order-box">
+                        <h4 class="title-form-order">Đơn hàng</h4>
+                        <h3 class="plus-cart">Sản phẩm</h3>
+                        <div class="plus-cart-provisional">
+                            <h4>Giày Nike Jordan University Blue (5)</h4>
+                            <h5>100000d</h5>
+                        </div>
+                        <div class="plus-cart-provisional">
+                            <h3 class="total-name" style="color: #8E0007">Tổng tiền</h3>
+                            <h4 class="total-price">100000d</h4>
+                        </div>
+                        <p class="order-note">Sau khi quý khách đặt hàng. Chúng tôi sẽ gửi thông tin đơn hàng qua Email và gọi điện xác nhận đơn hàng. Sau đó sẽ tiến hành vận chuyển hàng. Quý khách thanh toán khi nhận được hàng</p>
+                        <button href="" class="btn-check-out">Tiền hành thanh toán</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    <footer class="footer">
+
+
+        <footer class="footer">
             <header class="header-footer">
                 <h3 class="commom-title text-center">
                     HÃY LIÊN HỆ VỚI CHÚNG TÔI!
@@ -227,28 +248,28 @@
                 <p class="color-text text-center">Copyright © 2022 Urban Home. Powered by Haravan</p>
             </div>
         </footer>
+
+        <div class="list-contact-icon-box">
+            <ul class="list-contact-icon">
+                <li class="bg-phone"><i class="fa-solid fa-phone"></i></li>
+                <li class="bg-facebook"><i class="fa-brands fa-facebook-f"></i></li>
+                <li class="bg-youtobe"><i class="fa-brands fa-youtube"></i></li>
+                <li class="bg-twiter"><i class="fa-brands fa-twitter"></i></li>
+            </ul>
+        </div>
     </div>
     <div id="backTop">
         <i class="fa-solid fa-caret-up"></i>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-        $(window).scroll(function() {
-            // alert('Nguyen Ngoc uy')
-            if ($(this).scrollTop()) {
-                $('#backTop').fadeIn();
-            } else {
-                $('#backTop').fadeOut();
-            }
-        });
-        $('#backTop').click(function() {
-            $('html , body').animate({
-                scrollTop: 0
-            }, 2000);
-        });
-    });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="./assets/js/tab-slider.js"></script>
+    <script src="./assets/js/tab-component.js"></script>
+    <script src="./assets/js/list-cart.js"></script>
+    <script src="./assets/js/click-dropdown.js"></script>
+    <script src="./assets/js/back-top.js"></script>
+
 </body>
 
 </html>

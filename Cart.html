@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/Css/base.css">
     <link rel="stylesheet" href="./assets/Css/cart.css">
-    <link rel="stylesheet" href="./assets/Css/Product-detail.css">
+    <link rel="stylesheet" href="./assets/Css/Cart.css">
     <link rel="stylesheet" href="./assets/Css/dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -57,7 +57,7 @@
                     </div>
                 </div> -->
                 <div class="header-login   dropdown">
-                    <div onclick="dropdown()"  class="header-main_sub dropbtn">
+                    <div onclick="dropdown()" class="header-main_sub dropbtn">
                         <img class="header-info-user-img"
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYmkp9a2rrD1Sskb9HLt5mDaTt4QaIs8CcBg&usqp=CAU"
                             alt="">
@@ -143,237 +143,160 @@
             </div>
         </header>
 
-        <div class="content">
-            <div class="content-product-info_box padding-container">
-                <div class="content-product-info_left">
-                    <div class="container-product-image_box">
-                        <img id="expandedImg"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdwyMFRcoKj1kEEiDpD_S-Vh6rsVxsL3rCxg&usqp=CAU"
-                            style="width:100%">
-                        <div class="content-product_info-row">
-                            <div class="column">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdwyMFRcoKj1kEEiDpD_S-Vh6rsVxsL3rCxg&usqp=CAU"
-                                    alt="Nature" style="width:100%" onclick="myFunction(this);">
-                            </div>
-                            <div class="column">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwGPF8X5lgcLBtUZUXV9kPPpfw7IuIsTq3uQ&usqp=CAU"
-                                    alt="Snow" style="width:100%" onclick="myFunction(this);">
-                            </div>
-                            <div class="column">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx4Ej3sddJTqtqN48tLwfcukxY-e70Aev4Dw&usqp=CAU"
-                                    alt="Mountains" style="width:100%" onclick="myFunction(this);">
-                            </div>
-                            <div class="column">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4qPmyou8HM0n-ia6ZoZYnSPZDyiyfE1Rxlw&usqp=CAU"
-                                    alt="Lights" style="width:100%" onclick="myFunction(this);">
-                            </div>
-                        </div>
+        <div class="content padding-container text-center">
+            <h3 class="title-page-name commom-title text-center">Giỏ hàng </h3>
+            <p class="text-center color-text"> Giỏ hàng của bạn , hãy chọn những thứ mình muốn </p>
+            <div class="cart-box">
+                <div class="">
+                    <table class="table">
+                        <thead>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th>Tổng tiền</th>
+                            <th>Xoá</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="cart_name-box">
+                                    <img class="cart_img"
+                                        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSkgGBolGxUTITEtJSorLi4uFx8zODMsNygtMSsBCgoKDg0OFQ8PFS0dFR0tKysrKysrLSsrKy0tKy0uKy0yLSsuLS0rKystLS0tLS0tMi0tKy0tKystLS0rLS0rLf/AABEIALwBDAMBEQACEQEDEQH/xAAaAAEBAQEBAQEAAAAAAAAAAAAAAQIEAwUG/8QAORAAAgIBAQQGCAUCBwAAAAAAAAECEQMSBBMhUQUGMUFhcSIycoGRobHBI0JS0eEUMxVic5Ky8PH/xAAaAQEBAAMBAQAAAAAAAAAAAAAAAQIDBAUG/8QAMREBAAIBAwIEAwcEAwAAAAAAAAECEQMEMRIhE0FRcSJhkTJCgaGx0fAFUsHhFCMz/9oADAMBAAIRAxEAPwD30lRpIDWkDSiBpRA0ohF0hV0hF0gXSBrSA0gHECqJBpIgOJRUgCQGtIE0gNIDSMiUA0jIukZF0gTSBdIE0gZoojiBNIFUQQaQOJRCtaQNKIG1EDSiBdJMiqIyLpCKkBpIC0QVRAriAUQLQFoCUBVEC6QDiBNICgGkC6Qq6QGkIaQLpAy4gRxKI4kE0gKAtAcSgVWlEDaiMi6RkbUSCuIFSCGkKqiBrSENIGlEC0ASAlEFoZEoo0kAoAAoBQCgLQUoDSRMolFCgJQEcQJpAaQqaQi0By0gpSAqYGlQGk0BG0BU0BU0BdSA0pIC6kQTWgLqQQ1IA5oKmtANaKKsiILvEEXXHmFTeoCPIuYDeoILKgI8qKrayx5kE3sQJvkUN9EgPNEozv0AedAZWdAHnQR83fMqm9YDesYF3rAu9YwG8YwG9YDesBvWMC71jAb1jAm9ZQ3r5kwG8fMYDeMGHoseV9kJ/wC1mPVX1bI0dSfuz9GZLIu2Ml5xZcx6pOneOaz9GN4+ZWC7x8wG8fMBrYwGtlDWyBrYwLrYDWwGtgNbAaihZBGyiWAsBYHhYFsBYFsAAsBYFsBYCwFgLAWB7bJh3kqukuMnyRq1dToj5ura7ade2OIjl7ZOmti2bhrTa7d3HeTfv7Pizk+O/eXt10dPRjFY7uSfXXZ12Ytol4ucIfLiZeDJ1x8vpn/MN4+u+zfmwZ146oT/AGHgz6sc58/y/wBy949bOjp+tvY+1hi18mTotHEk1iecT/PZv/EuisnZmxxfjHJj+xlFtSPNqna6dvuR+E4/ZmUdkl/b2vD5SyRM417RzDRf+mxP2Jx+bllwfBp+MXcX5M6azExmHl6mnbTtNLcwFYAFAAAAAABbAEEKAADnAtgLAtgALYCwAAAAAWAA+f0xtLjBY061u5eyjm1O9/Z7/wDTa9GjNvOX5rLOvMyiF1LYeFszastaqIyybxIuE8SISWePMnTKTr0jzeuFzk/Rx5J+zCTHhyRvdOH6rofUsKjOLhKLfovtSfFGdYx2edu9SNS/iRHaf8O6zJylgVMCgLAAAKQCgAAEAo5gKAAALAtgLAAUAAAAAPz3S2b022+CVI5sZmX0mlNa6FYzxD41SySeiLl5di833G6KuDV16xPLrxdF5JetOMPBJzf2Muly23M+T3fRmGH9zJJ+coxT91WXDVOte3ZhrZYdmNS9q5f8mOqGcaOtby+qrpDT6kIR8o/tRjN/k3V2c/et/PyZXSOZv15L2aX2v5mM3lups9PzmZfX6CzObyam5NqLuTcn3978y0mZ5ad9pV05rFIxD65m4ACgAAGgAFIBQAACKFRzAAAAABQAAC2AAWAsCgfC6T6PxOcsjtd7inUXKxENviWxjLlWaMFSXlGP/eBlMxHLGlLXnFYzLwzbfJ8E6XKP7/sa5v6O2m0rH25z+jkllfHjXP8AlmPLqrikdu0Od7QrqKc5coqzOKTzPZz23dInpr8U/JtRyPtccfgvxJfsT4Y+ax49+cUj6z+z1xKuFt+Mq+xjM58nRp1mvNs+773V51KS5xv4NCjTv4iaRPpL7pseUAAKgKRVKggAACgQCgCZHMUAAAABQAAAAAAAJJ0m+SA/PdJ7apejB8L4y7vJc/oSbRHu6tLb21O89q+v7PlSlfgvm3zfMw57y9CtYrHTWMQ58+0KHi+RlWk29nPr7mul25t6PHFjnm9Kb04/Dv8ABLvNkzFOOXHp01d1ObTin8+rshFRVRWleHa/N95pmZnl6enpU04xSMLRGwiEh9vq9K8sv9N/VFry597/AOce79CbHlgACoDQAARVCAAAFAgBzUUKAUAAoACgQAAoAAA8trk1jm4umotpmNozEt23nGrWfm/I55uTuTbfNmuIw9q85cO159HBes18EbqUz3nh5273M6fw1+1Lw2TZ943KV6U+POT5Gy9umMRy4drt51rTa32Y5+b6L+nBJdiRzPciIiMRwxkyRirbosVmeGvU1aacZtOGVrlx/tx5yVyfkv3Mvhj5y1Vtq6nesdNfWefwj92oxS4K34ydtmMzlupTpjmZ933OrS/Eyex90K8tG9n4I936KjY8xaAukirQCgi0AoKukC6SImkqrpAaSCqIHIZIgAABQIBQIBQKBAAGcsdUZLnFr5EZVnFol+Ll2mt7mXBt+NucEu2Xorzv+TdpT2l5O/05nUpjme38+rthBRSiuxfN97NVpmZy9LT0406xWPJzbRtVPTDjLs8n9zZXTz3nhx7jexWejT72bwbPp9KfpZPHiofyS1/KvDPQ22J8TV73/T/f6Pa7NbsygH3urC9LK/8ALFfNlry497Pw1foDY85UwKQUAAIogNoABQAAABxGSAAAAAoEAoAABQIAA/HbdDTlyR5Tl9TU9rTnNYl5NK064q6fKxnyZ2pWZi08xw4ds2ntjH3v7I3Up5y8vebvnTpPvLew4NKU36z9XwXMmpbyhnsdviPFtHfy/d0mp6Lz3ltxgra7X2Rj5sy6fOXPOtmejTjM/lHvLUVXfqfe6pe5ElspWY+1OZfourC4ZX4wX1LVy72fs/i+6ZuARFaAoAgoACgLAoBMCgAOMyRAAAABQAAAAAAAAH5fp2GnPJ/qSl8jXPL1dtbOnHycHaiOnmJh8vBg1ZNL7E3q8kdVrYrl8/o6E31fDt5c/g+lKS7+H0Ryvdm0V54c2uWWWmLcYL1pd9G3pisZnlwTq33FujTnFfOXTGKS0xVRXYvu/E1zMzOZdtKV06xWsdhBlD9L1aj+FkfOdfBfyWrh3v2oh9gzcS2RVQFQFIAFAAVAUAAAAchkgAAAAAACgAAEAAAPg9ZcfHHPmnF+7/0ws79pbtMPiRZi7KziV0JNyS4ySTfgh1TjB4Va2m8cy+ftOZzemPZde0zopXpjMvH3W4nVt0U4/V24sahFRXvfN8zTa3VOXqaOlGlSKxz5+7VkbREH6vq9CtnvnOT+iMq8PO3c/wDZ+D6Rk5VSKikVQBBSi2QSwKgKgKBOICgOUyAgFAIAAAACgQCgQC0B83rBi1YG/wBEk/d2fcxl07a2L+78szF6EtriqfkThsj4q4lxbJs7jklf5Ozxb7H8LN175rHzeVtNvNda3V93/PH5Ow0vVwMCFR+w6GjWz4vFN/Fsyrw8rcznUl3FaSgNAAKQAKAAIC2BbAAAOQyEIAAooQAAAAAC2BALYHjtcFPHOD/NFr39xOWdLdNol+JfLkYPVzlYsMqziXpZi2dmbLANhJlmysJth+12BpYsa5Qj9DOHkaluq0y6dQYqmBoABSABQACgAFAJAaA4yggAAqAVQAQAAQABlsK8cmSgPm7dnlTSZYgfmM2KabakzLESsXvXizy/E5/IdNV/5Gr6l5P1P4Dpj0PH1f7lrJ+p/IdMeieNq/3SqxTf5pfEYj0TxNSfvS6dn2O2rbfmx2M2nmZfqtibUUvAwV3QkRHrGQG7A0gKQAKAAqAAANAAOMohUCKoAAAKgFAgFQIxIK8ckQOLaMVmSvn5Nl8C5MPCWyeAymGf6MuTAtj8Bkw9cexkyuHZg2Wu4kyr6mHHSMUl0QiRHrFAaSA0gNUQAKBQACgAAC2UcgAAAKgFWggAQFCowjLAjQGJIK8ZwA8ZYSq83hAf06CrHAvAZG44eQyPWGMg6IIiPaIRpAUDSAoAgtgAFgUCoAwJYRzFUoAAKiEVSgEGAAgUAgRloKxJAedBUoBpAukDSQG0gr0iRG0EaAtgNQGlICkACgAKBUAAlAcpQsAAAoEAFQAIihQCIBKCsMDDAlAArSAqQGkB6RINII0BQLQCgKBSAUUgAChZBWBylAAAAqAUVEoihUWiKgEKgwoBhgZaAlAKCqkEWgrUQjSINoDSAqAqAtgQCogpQAoFTAMggHMUCigQIqIqMoEAqBFGUAAEAywIBAAFAIDQVpERoEtIABpAUCkAAUUAAIBRpEH/2Q=="
+                                        alt="">
+                                    <div class="product_cart-info-rigth">
+                                        <p class="product_name">okokokokokoko</p>
+                                        <ul class="product_atribute-list">
+                                            <li>Size M</li>
+                                            <li>Size L</li>
+                                            <li>Size S</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="number-input">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td>10 0000d</td>
+                                <td>100 0000d</td>
+                                <td>
+                                    <a href="" class="btn-delete-cart"><i class="fa-solid fa-trash-can"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="cart_name-box">
+                                    <img class="cart_img"
+                                        src="data:image/jpeg;base64,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"
+                                        alt="">
+                                    <div class="product_cart-info-rigth">
+                                        <p class="product_name">okokokokokoko</p>
+                                        <ul class="product_atribute-list">
+                                            <li>Size M</li>
+                                            <li>Size L</li>
+                                            <li>Size S</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="number-input">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td>10 0000d</td>
+                                <td>100 0000d</td>
+                                <td>
+                                    <a href="" class="btn-delete-cart"><i class="fa-solid fa-trash-can"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="cart_name-box">
+                                    <img class="cart_img"
+                                        src="data:image/jpeg;base64,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"
+                                        alt="">
+                                    <div class="product_cart-info-rigth">
+                                        <p class="product_name">okokokokokoko</p>
+                                        <ul class="product_atribute-list">
+                                            <li>Size M</li>
+                                            <li>Size L</li>
+                                            <li>Size S</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="number-input">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td>10 0000d</td>
+                                <td>100 0000d</td>
+                                <td>
+                                    <a href="" class="btn-delete-cart"><i class="fa-solid fa-trash-can"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="cart_name-box">
+                                    <img class="cart_img"
+                                        src="data:image/jpeg;base64,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"
+                                        alt="">
+                                    <div class="product_cart-info-rigth">
+                                        <p class="product_name">okokokokokoko</p>
+                                        <ul class="product_atribute-list">
+                                            <li>Size M</li>
+                                            <li>Size L</li>
+                                            <li>Size S</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="number-input">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><i class="fa-solid fa-minus"></i></button>
+                                        <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td>10 0000d</td>
+                                <td>100 0000d</td>
+                                <td>
+    
+                                    <a href="" class="btn-delete-cart"><i class="fa-solid fa-trash-can"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btn-table-footer">
+                        <button class="btn-footer btn-continue-now"><a href=""><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua hàng</a></button>
+                        <button class="btn-footer btn-update-cart "><a href="">Cập nhật giỏ hàng</a></button>
                     </div>
                 </div>
-                <div class="content-product-info_right">
-                    <div class="header-product-info_right">
-                        <h3 class="product-name">Ghế sofa giường kéo Roots</h3>
-                        <div class="product-sale">25%</div>
+                <div class="total-money">
+                    <h3 class="plus-cart">Cộng giỏ hàng</h3>
+                    <div class="plus-cart-provisional">
+                        <h4>Tạm tính</h4>
+                        <h5>100000d</h5>
                     </div>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
-                        </div>
-                        <div class="product-price_sale color-text">
-                            1,250,000₫
-                        </div>
+                    <div class="plus-cart-provisional">
+                        <h3 class="total-name">Tổng tiền</h3>
+                        <h4  class="total-price">100000d</h4>
                     </div>
-                    <div class="product-atribute_box">
-                        <p>Màu sắc : </p>
-                        <ul class="product-atribute_list-color">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <p class="alert-product-number">Còn 10 sản phẩm</p>
-                    <div class="">
-                        <div class="number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                class="minus"><i class="fa-solid fa-minus"></i></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                class="plus"><i class="fa-solid fa-plus"></i></button>
-                        </div>
-                        <button class="btn-add-to-cart">Thêm giỏ hàng</button>
-                    </div>
-                    <div class="tabs1">
-                        <div class="tab-item active tablinks" id="defaultOpen" onclick="openCity(event, 'London')">Mô tả
-                        </div>
-                        <div class="tab-item tablinks" onclick="openCity(event, 'Paris')">
-                            ĐIỀU KHOẢN DỊCH VỤ</div>
-                        <div class="tab-item tablinks" onclick="openCity(event, 'Tokyo')">
-                            CHÍNH SÁCH ĐỔI TRẢ</div>
-                    </div>
-                    <div id="London" class="tabcontent">
-                        1. Điều kiện đổi trả
-
-                        Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời
-                        điểm giao/nhận hàng trong những trường hợp sau:
-
-                        Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt
-                        hàng.
-                        Không đủ số lượng, không đủ bộ như trong đơn hàng.
-                        Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…
-                        Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để hoàn thành
-                        việc hoàn trả/đổi trả hàng hóa.
-
-
-
-                        2. Quy định về thời gian thông báo và gửi sản phẩm đổi trả
-
-                        Thời gian thông báo đổi trả: trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm
-                        thiếu phụ kiện, quà tặng hoặc bể vỡ.
-                        Thời gian gửi chuyển trả sản phẩm: trong vòng 14 ngày kể từ khi nhận sản phẩm.
-                        Địa điểm đổi trả sản phẩm: Khách hàng có thể mang hàng trực tiếp đến văn phòng/ cửa hàng của
-                        chúng tôi hoặc chuyển qua đường bưu điện.
-                        Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản phẩm,
-                        Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng của chúng tôi.
-                        1. Điều kiện đổi trả
-
-                        Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời
-                        điểm giao/nhận hàng trong những trường hợp sau:
-
-                        Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt
-                        hàng.
-                        Không đủ số lượng, không đủ bộ như trong đơn hàng.
-                        Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…
-                        Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để hoàn thành
-                        việc hoàn trả/đổi trả hàng hóa.
-
-
-
-                        2. Quy định về thời gian thông báo và gửi sản phẩm đổi trả
-
-                        Thời gian thông báo đổi trả: trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm
-                        thiếu phụ kiện, quà tặng hoặc bể vỡ.
-                        Thời gian gửi chuyển trả sản phẩm: trong vòng 14 ngày kể từ khi nhận sản phẩm.
-                        Địa điểm đổi trả sản phẩm: Khách hàng có thể mang hàng trực tiếp đến văn phòng/ cửa hàng của
-                        chúng tôi hoặc chuyển qua đường bưu điện.
-                        Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản phẩm,
-                        Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng của chúng tôi.
-                    </div>
-
-                    <div id="Paris" class="tabcontent">
-                        <h3>Paris</h3>
-                        <p>Paris is the capital of France.</p>
-                    </div>
-
-                    <div id="Tokyo" class="tabcontent">
-                        <h3>Tokyo</h3>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
-                </div>
-            </div>
-            <h3 class="commom-title product-related_title text-center">
-                SẢN PHẨM LIÊN QUAN
-            </h3>
-            <p class="text-center color-text">Luôn sẵn sáng hỗ trợ và tư vấn cho bạn để có sản phẩm tốt nhất.</p>
-            <div class="product-related_box padding-container product-list_box">
-                <div class="product-item">
-                    <div class="product-item_img-box">
-                        <img class="w-100"
-                            src="https://product.hstatic.net/1000409762/product/sp12-1_5316e032a8b0403b8fe26c4cd6bef167_large.jpg"
-                            alt="">
-                        <div class="product-item_percent">25%</div>
-                        <div class="product-item_icon">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <p class="product-item_name"><a href="">Ấm trà inox không ghỉ</a></p>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
-                        </div>
-                        <div class="product-price_sale">
-                            1,250,000₫
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-item_img-box">
-                        <img class="w-100"
-                            src="https://product.hstatic.net/1000409762/product/sp12-1_5316e032a8b0403b8fe26c4cd6bef167_large.jpg"
-                            alt="">
-                        <div class="product-item_percent">25%</div>
-                        <div class="product-item_icon">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <p class="product-item_name"><a href="">Ấm trà inox không ghỉ</a></p>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
-                        </div>
-                        <div class="product-price_sale">
-                            1,250,000₫
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-item_img-box">
-                        <img class="w-100"
-                            src="https://product.hstatic.net/1000409762/product/sp12-1_5316e032a8b0403b8fe26c4cd6bef167_large.jpg"
-                            alt="">
-                        <div class="product-item_percent">25%</div>
-                        <div class="product-item_icon">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <p class="product-item_name"><a href="">Ấm trà inox không ghỉ</a></p>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
-                        </div>
-                        <div class="product-price_sale">
-                            1,250,000₫
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-item_img-box">
-                        <img class="w-100"
-                            src="https://product.hstatic.net/1000409762/product/sp12-1_5316e032a8b0403b8fe26c4cd6bef167_large.jpg"
-                            alt="">
-                        <div class="product-item_percent">25%</div>
-                        <div class="product-item_icon">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <p class="product-item_name"><a href="">Ấm trà inox không ghỉ</a></p>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
-                        </div>
-                        <div class="product-price_sale">
-                            1,250,000₫
-                        </div>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div class="product-item_img-box">
-                        <img class="w-100"
-                            src="https://product.hstatic.net/1000409762/product/sp12-1_5316e032a8b0403b8fe26c4cd6bef167_large.jpg"
-                            alt="">
-                        <div class="product-item_percent">25%</div>
-                        <div class="product-item_icon">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <p class="product-item_name"><a href="">Ấm trà inox không ghỉ</a></p>
-                    <div class="product-item_price-wraper">
-                        <div class="product-price-main">
-                            890,000₫
-                        </div>
-                        <div class="product-price_sale">
-                            1,250,000₫
-                        </div>
-                    </div>
+                    <button href="" class="btn-check-out"><a href="">Tiền hành thanh toán</a></button>
                 </div>
             </div>
         </div>
@@ -459,26 +382,28 @@
                 <p class="color-text text-center">Copyright © 2022 Urban Home. Powered by Haravan</p>
             </div>
         </footer>
-        
-       <div class="list-contact-icon-box">
-         <ul class="list-contact-icon">
-            <li class="bg-phone"><i class="fa-solid fa-phone"></i></li>
-            <li class="bg-facebook"><i class="fa-brands fa-facebook-f"></i></li>
-            <li class="bg-youtobe"><i class="fa-brands fa-youtube"></i></li>
-            <li class="bg-twiter"><i class="fa-brands fa-twitter"></i></li>
-        </ul>
-       </div>
+
+        <div class="list-contact-icon-box">
+            <ul class="list-contact-icon">
+                <li class="bg-phone"><i class="fa-solid fa-phone"></i></li>
+                <li class="bg-facebook"><i class="fa-brands fa-facebook-f"></i></li>
+                <li class="bg-youtobe"><i class="fa-brands fa-youtube"></i></li>
+                <li class="bg-twiter"><i class="fa-brands fa-twitter"></i></li>
+            </ul>
+        </div>
     </div>
     <div id="backTop">
         <i class="fa-solid fa-caret-up"></i>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script src="./assets/js/tab-slider.js"></script>
     <script src="./assets/js/tab-component.js"></script>
     <script src="./assets/js/list-cart.js"></script>
     <script src="./assets/js/click-dropdown.js"></script>
     <script src="./assets/js/back-top.js"></script>
+
 </body>
 
 </html>
